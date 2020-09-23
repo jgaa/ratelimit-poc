@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rated
+  labels:
+    app: rated
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rated
+  template:
+    metadata:
+      labels:
+        app: rated
+    spec:
+      containers:
+      - name: rated
+        image: jgaafromnorth/rated
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 5000
+        #env:
+        #- name: GRPC_VERBOSITY
+          #value: "debug"
+        #- name: GRPC_TRACE
+          #value: "tcp,http,api"

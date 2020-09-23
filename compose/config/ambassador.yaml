@@ -1,0 +1,4 @@
+apiVersion: ambassador/v2
+kind: Module
+name: ambassador
+config: {}

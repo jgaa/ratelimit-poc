@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rest-diag-deployment
+  labels:
+    app: rest-diag
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: rest-diag
+  template:
+    metadata:
+      labels:
+        app: rest-diag
+    spec:
+      containers:
+      - name: rest-diag
+        image: jgaafromnorth/rest-diag-svc
+        ports:
+        - containerPort: 8080

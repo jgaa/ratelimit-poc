@@ -1,0 +1,6 @@
+apiVersion: getambassador.io/v2
+kind:  RateLimitService
+metadata:
+  name:  ratelimit
+spec:
+  service: "rated:5000"

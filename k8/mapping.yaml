@@ -1,0 +1,17 @@
+apiVersion: getambassador.io/v2
+kind:  Mapping
+metadata:
+  name:  service-backend
+spec:
+  prefix: /backend/
+  service: http://rest-diag-service:8080
+  labels:
+    ambassador:
+    - request_group:      
+      - remote_address
+      - source_cluster
+      - "host": { "header": "host" }
+      - "method": { "header": ":method" }
+      - "path": { "header": ":path"}
+    - auth_group:
+      - "auth": { "header": "authorization" }
