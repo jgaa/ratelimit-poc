@@ -1,5 +1,0 @@
-apiVersion: ambassador/v2
-kind:  Mapping
-name:  backend-mapping
-prefix: /backend/
-service: backend:8080
